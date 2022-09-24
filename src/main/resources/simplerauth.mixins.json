@@ -10,7 +10,8 @@
     "ServerConfigHandlerMixin",
     "ServerLoginNetworkHandlerMixin",
     "ServerPlayNetworkHandlerMixin",
-    "UserCacheMixin"
+    "UserCacheMixin",
+    "GameProfileArgumentTypeMixin"
   ],
   "injectors": {
     "defaultRequire": 1
