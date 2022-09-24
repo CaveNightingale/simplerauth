@@ -41,7 +41,7 @@ public class RegisterCommand {
             throw new SimpleCommandExceptionType(LangManager.getLiteralText("command.register.globaltype")).create();
         }
         
-        ServerPlayerEntity player = ctx.getSource().getPlayerOrThrow();
+        ServerPlayerEntity player = ctx.getSource().getPlayer();
         String username = player.getEntityName();
         
         if (DbManager.isPlayerRegistered(username)) {
