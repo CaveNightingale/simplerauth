@@ -22,7 +22,7 @@ import static net.minecraft.server.command.CommandManager.literal;
 public class LoginCommand {
     public static void registerCommand(CommandDispatcher<ServerCommandSource> dispatcher) {
         dispatcher.register(literal("login")
-            .then(argument("password", StringArgumentType.word())
+            .then(argument("password", StringArgumentType.greedyString())
                     .executes(ctx -> {
                         String username = ctx.getSource().getPlayer().getEntityName();
                         if (!DbManager.getTwoFactorEnabled(username) && !ConfigManager.getAuthType().equals("2fa")) {

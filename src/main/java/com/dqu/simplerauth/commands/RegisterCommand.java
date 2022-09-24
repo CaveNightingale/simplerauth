@@ -23,9 +23,9 @@ import static net.minecraft.server.command.CommandManager.literal;
 public class RegisterCommand {
     public static void registerCommand(CommandDispatcher<ServerCommandSource> dispatcher) {
         dispatcher.register(literal("register")
-            .then(argument("password", StringArgumentType.word())
-                .then(argument("repeatPassword", StringArgumentType.word())
-                    .executes(ctx -> register(ctx))
+            .then(argument("password", StringArgumentType.string())
+                .then(argument("repeatPassword", StringArgumentType.string())
+                    .executes(RegisterCommand::register)
                 )
             )
         );

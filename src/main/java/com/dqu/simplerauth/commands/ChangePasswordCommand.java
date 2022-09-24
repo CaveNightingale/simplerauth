@@ -15,8 +15,8 @@ import static net.minecraft.server.command.CommandManager.literal;
 public class ChangePasswordCommand {
     public static void registerCommand(CommandDispatcher<ServerCommandSource> dispatcher) {
         dispatcher.register(literal("changepassword")
-            .then(argument("oldPassword", StringArgumentType.word())
-                .then(argument("newPassword", StringArgumentType.word())
+            .then(argument("oldPassword", StringArgumentType.string())
+                .then(argument("newPassword", StringArgumentType.string())
                     .executes(ctx -> {
                         String oldPassword = StringArgumentType.getString(ctx, "oldPassword");
                         String newPassword = StringArgumentType.getString(ctx, "newPassword");
